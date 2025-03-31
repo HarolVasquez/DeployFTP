@@ -1,0 +1,28 @@
+name: FTP Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.VITE_NEW_KEY2 }}
+          username: ${{ secrets.VITE_SOME_KEY }}
+          password: ${{ secrets.VITE_DB_PASSWORD }}
+          local-dir: dist/ 
