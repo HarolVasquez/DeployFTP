@@ -7,22 +7,18 @@ on:
 
 jobs:
   deploy:
+
+    env:
+      password:
+      username: ${{secrets.}}
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
+      - name: "Mostrar mensaje"
+        run: echo "Hola mundo"
 
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.VITE_NEW_KEY2 }}
-          username: ${{ secrets.VITE_SOME_KEY }}
-          password: ${{ secrets.VITE_DB_PASSWORD }}
-          local-dir: dist/ 
+      - name: "Mostrando variables de entorno"
