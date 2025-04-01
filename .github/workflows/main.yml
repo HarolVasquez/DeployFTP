@@ -2,23 +2,23 @@ name: FTP Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   deploy:
-
     env:
-      password:
-      username: ${{secrets.}}
+      password: ${{secrets.VITE_DB_PASSWORD}}
+      username: ${{secrets.VITE_SOME_KEY}}
+      email: ${{secrets.VITE_NEWKEY2}}
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
       - name: "Mostrar mensaje"
         run: echo "Hola mundo"
 
       - name: "Mostrando variables de entorno"
+        run:
+            echo "Estos es el valor de usurname: ${{env.username}}"
+            echo "Estos es el valor de password: ${{env.password}}"
+            echo "Estos es el valor de email: ${{env.email}}"
