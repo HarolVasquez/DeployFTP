@@ -18,7 +18,7 @@ jobs:
         run: echo "Hola mundo"
 
       - name: "Mostrando variables de entorno"
-        run:
+        run: |
             echo "Estos es el valor de usurname: ${{env.username}}"
             echo "Estos es el valor de password: ${{env.password}}"
             echo "Estos es el valor de email: ${{env.email}}"
