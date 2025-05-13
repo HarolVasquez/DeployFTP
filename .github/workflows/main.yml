@@ -22,10 +22,10 @@ jobs:
           node-version: 16
         
       - name: Instalar npm
-        run: npm install && npm run postinstall
+        run: npm install
         
       - name: Compilar proyecto
-        run: npm run bundle
+        run: npm run build
         
       - name: Sincronizar proyecto
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
