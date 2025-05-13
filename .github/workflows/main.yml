@@ -28,7 +28,7 @@ jobs:
         run: npm run build
         
       - name: Volcar contenido
-        run: cd dist
+        run: cd github/dist
       
       - name: Sincronizar proyecto
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
