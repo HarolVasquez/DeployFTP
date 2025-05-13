@@ -16,11 +16,9 @@ jobs:
     steps:
       - name: Obtner ultimo codigo
         uses: actions/checkout@v4
-        with:
-          repository: https://github.com/HarolVasquez/TareaTI.git
     
       - name: Sincronizar proyecto
-        uses: ./
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{secrets.FTP_SERVER}}
           username: ${{secrets.FTP_USERNAME}}
