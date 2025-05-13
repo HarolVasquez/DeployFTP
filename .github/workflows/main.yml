@@ -22,7 +22,7 @@ jobs:
           node-version: 16
         
       - name: Instalar npm
-        run: npm install
+        run: npm install && npm run postinstall
         
       - name: Compilar proyecto
         run: npm run bundle
