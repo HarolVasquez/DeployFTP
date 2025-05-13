@@ -20,9 +20,9 @@ jobs:
       - name: Sincronizar proyecto
         uses: ./
         with:
-          server: tghtechnologysolution.com
-          username: github@github.tghtechnologysolution.com
-          password: ${{secrets.ftp_password}}
+          server: ${{secrets.FTP_SERVER}}
+          username: ${{secrets.FTP_USERNAME}}
+          password: ${{secrets.FTP_PASSWORD}}
 
       - name: "Mostrando variables de entorno"
         run: |
