@@ -12,11 +12,24 @@ jobs:
       email: ${{secrets.VITE_NEWKEY2}}
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./themes/our-awesome-theme
 
     steps:
       - name: Obtner ultimo codigo
         uses: actions/checkout@v4
-    
+
+      - name: Instalar dependencias
+        run: composer install --prefer-dist --no-progress --no-suggest
+        
+      - name: Instalar npm
+        run: npm install
+        
+      - name: Compilar proyecto
+        run: npm run build
+        
       - name: Sincronizar proyecto
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
