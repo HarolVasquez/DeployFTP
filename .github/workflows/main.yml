@@ -12,11 +12,6 @@ jobs:
       email: ${{secrets.VITE_NEWKEY2}}
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./themes/our-awesome-theme
-
     steps:
       - name: Obtner ultimo codigo
         uses: actions/checkout@v4
