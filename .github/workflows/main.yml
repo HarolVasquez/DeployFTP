@@ -19,7 +19,7 @@ jobs:
       - name: Instalar dependencias
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 18
         
       - name: Instalar npm
         run: npm install
