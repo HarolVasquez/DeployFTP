@@ -14,8 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Mostrar mensaje"
-        run: echo "Hola mundo"
+      - name: Obtner ultimo codigo
+        uses: actions/checkout@v4
+    
+      - name: Sincronizar proyecto
+        uses: ./
+        with:
+          server: tghtechnologysolution.com
+          username: github@github.tghtechnologysolution.com
+          password: ${{secrets.ftp_password}}
 
       - name: "Mostrando variables de entorno"
         run: |
