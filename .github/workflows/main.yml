@@ -17,7 +17,7 @@ jobs:
       - name: Obtner ultimo codigo
         uses: actions/checkout@v4
         with:
-          repository: https://github.com/HarolVasquez/TareaTI
+          repository: https://github.com/HarolVasquez/TareaTI.git
     
       - name: Sincronizar proyecto
         uses: ./
