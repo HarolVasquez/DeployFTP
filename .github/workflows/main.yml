@@ -39,4 +39,4 @@ jobs:
         run: |
           echo "Estos es el valor de usurname: ${{env.username}}"
           echo "Estos es el valor de password: ${{env.password}}"
-          echo "Estos es el valor de email: ${{env.email}}"
+          echo "Estos es el valor de emai: ${{env.email}}"
