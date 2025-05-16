@@ -26,9 +26,6 @@ jobs:
         
       - name: Compilar proyecto
         run: npm run build
-        
-      - name: Volcar contenido
-        run: cd dist
       
       - name: Sincronizar proyecto
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -37,10 +34,6 @@ jobs:
           username: ${{secrets.FTP_USERNAME}}
           password: ${{secrets.FTP_PASSWORD}}
           local-dir: dist/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
           
       - name: "Mostrando variables de entorno"
         run: |
